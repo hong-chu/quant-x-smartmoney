@@ -820,7 +820,8 @@ def render_ai_themes(ai_sector_results, ai_anomalies, ai_all_zscores,
 
             ts = sector["time_series"].get(selected_industry)
             if ts is not None and not ts.empty:
-                st.plotly_chart(build_timeseries_chart(ts), use_container_width=True)
+                st.plotly_chart(build_timeseries_chart(ts), use_container_width=True,
+                                key=f"{key_prefix}_ts")
 
             ind_info = combined[combined["industry"] == selected_industry]
             if not ind_info.empty:
@@ -907,6 +908,7 @@ def render_ai_themes(ai_sector_results, ai_anomalies, ai_all_zscores,
                         st.plotly_chart(
                             build_stock_flow_chart(ts_df, ticker),
                             use_container_width=True,
+                            key=f"{key_prefix}_flow_{ticker}_{idx}",
                         )
 
     # Heatmap: all subcategories over time
@@ -917,6 +919,7 @@ def render_ai_themes(ai_sector_results, ai_anomalies, ai_all_zscores,
     st.plotly_chart(
         build_ai_heatmap(ai_sector_results, combined, layers_config),
         use_container_width=True,
+        key=f"{key_prefix}_heatmap",
     )
 
 
