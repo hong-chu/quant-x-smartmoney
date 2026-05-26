@@ -1106,11 +1106,22 @@ def main():
 
     # Footer
     st.markdown("---")
+    updated_at = all_data.get("updated_at", "")
+    if updated_at:
+        from datetime import datetime as _dt
+        try:
+            ut = _dt.fromisoformat(updated_at)
+            updated_str = ut.strftime("%Y-%m-%d %I:%M %p ET")
+        except Exception:
+            updated_str = updated_at
+    else:
+        updated_str = "live fetch"
+
     st.caption(
         f"SmartMoney v0.1 · {n_tickers} tickers · "
         f"{'Market-Cap Weighted' if weighting else 'Equal Weighted'} · "
-        f"Part of the [Investment Insights Toolkit](https://github.com/hong-chu) · "
-        f"Data refreshes daily at market close"
+        f"Last updated: {updated_str} · "
+        f"Part of the [Investment Insights Toolkit](https://github.com/hong-chu)"
     )
     st.caption(
         "Built by [Hong Chu](https://www.linkedin.com/in/hong-chu-quantai/) · "

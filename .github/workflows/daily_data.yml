@@ -28,10 +28,30 @@ jobs:
         run: |
           python scripts/prefetch_data.py
 
-      - name: Check cache file
+      - name: Validate cache
         run: |
-          ls -lh data/cache.pkl
-          echo "Cache size: $(du -h data/cache.pkl | cut -f1)"
+          python -c "
+          import pickle, sys
+          with open('data/cache.pkl', 'rb') as f:
+              data = pickle.load(f)
+          n = data.get('n_tickers', 0)
+          updated = data.get('updated_at', 'unknown')
+          keys = [k for k in data.keys() if k not in ('n_tickers', 'updated_at')]
+          print(f'Tickers: {n}')
+          print(f'Updated: {updated}')
+          print(f'Data keys: {keys}')
+          # Fail if too few tickers
+          if n < 500:
+              print(f'ERROR: Only {n} tickers — expected 600+')
+              sys.exit(1)
+          # Check all 6 weighting groups exist
+          expected = ['equal', 'market_cap', 'ai_equal', 'ai_market_cap', 'pai_equal', 'pai_market_cap']
+          missing = [k for k in expected if k not in data]
+          if missing:
+              print(f'ERROR: Missing data groups: {missing}')
+              sys.exit(1)
+          print('Validation PASSED')
+          "
 
       - name: Commit and push cache
         run: |
@@ -41,3 +61,24 @@ jobs:
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: daily data update $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
+
+  # Notify on failure
+  notify-failure:
+    runs-on: ubuntu-latest
+    needs: prefetch
+    if: failure()
+    steps:
+      - name: Send failure notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "⚠️ SmartMoney Daily Data Prefetch FAILED"
+          body: |
+            The daily data prefetch job failed at ${{ github.event.head_commit.timestamp }}.
+
+            Check the logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          to: yeesun.ch@gmail.com
+          from: SmartMoney Bot
