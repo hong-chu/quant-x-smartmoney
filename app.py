@@ -987,20 +987,26 @@ def build_ai_heatmap(ai_sector_results, combined_ranking, layers_config=None):
                     f"{d.strftime('%Y-%m-%d')}<br>"
                     f"Rotation: {v:.3f}")
             else:
-                row_vals.append(None)
+                row_vals.append(np.nan)
                 row_hover.append("")
         z.append(row_vals)
         hover_text.append(row_hover)
 
+    if not z or not z[0]:
+        return go.Figure()
+
     # Format x-axis dates
     x_labels = [d.strftime("%m/%d") for d in all_dates]
+
+    # Convert z to numpy array for Plotly compatibility
+    z_array = np.array(z, dtype=float)
 
     # Multicategory y-axis: [layer_names], [subcategory_names]
     y_layer_names = [c[0] for c in y_categories]
     y_sub_names = [c[1] for c in y_categories]
 
     fig = go.Figure(go.Heatmap(
-        z=z,
+        z=z_array,
         x=x_labels,
         y=[y_layer_names, y_sub_names],
         hovertext=hover_text,
