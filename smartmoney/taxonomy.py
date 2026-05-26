@@ -5,7 +5,9 @@ Maps sector ETFs → industry groups → representative tickers.
 Based on the IBD 197 Industry Groups classification with custom additions
 for emerging themes (AI infrastructure, quantum computing, space tech, etc.).
 
-Users can extend this by providing a custom YAML/JSON taxonomy file.
+Primary source: taxonomy.yaml in the project root.
+If the YAML file exists, it is loaded instead of the hardcoded defaults below.
+Edit taxonomy.yaml to customize your own sectors, industries, and tickers.
 """
 
 from dataclasses import dataclass, field
@@ -14,7 +16,39 @@ import json
 import logging
 from pathlib import Path
 
+try:
+    import yaml
+    HAS_YAML = True
+except ImportError:
+    HAS_YAML = False
+
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# YAML-based taxonomy loader
+# ---------------------------------------------------------------------------
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_TAXONOMY_YAML = _PROJECT_ROOT / "taxonomy.yaml"
+
+
+def _load_yaml_taxonomy() -> tuple[dict, dict] | None:
+    """Load taxonomy from YAML file. Returns (SECTOR_ETFS, TAXONOMY) or None."""
+    if not HAS_YAML:
+        logger.info("PyYAML not installed, using hardcoded taxonomy")
+        return None
+    if not _TAXONOMY_YAML.exists():
+        logger.info(f"No taxonomy.yaml found at {_TAXONOMY_YAML}, using hardcoded taxonomy")
+        return None
+
+    logger.info(f"Loading taxonomy from {_TAXONOMY_YAML}")
+    with open(_TAXONOMY_YAML) as f:
+        data = yaml.safe_load(f)
+
+    sector_etfs = data.get("sector_etfs", {})
+    taxonomy = data.get("taxonomy", {})
+    logger.info(f"  Loaded {len(taxonomy)} sectors, "
+                f"{sum(len(v) for v in taxonomy.values())} industries")
+    return sector_etfs, taxonomy
 
 
 @dataclass
@@ -51,9 +85,6 @@ SECTOR_ETFS = {
     "XLU": "Utilities",
     "XLC": "Communication Services",
 }
-
-# Reverse mapping
-ETF_BY_SECTOR = {v: k for k, v in SECTOR_ETFS.items()}
 
 
 TAXONOMY: dict[str, dict[str, list[str]]] = {
@@ -454,6 +485,17 @@ TAXONOMY: dict[str, dict[str, list[str]]] = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Override with YAML if available
+# ---------------------------------------------------------------------------
+_yaml_result = _load_yaml_taxonomy()
+if _yaml_result is not None:
+    SECTOR_ETFS, TAXONOMY = _yaml_result
+
+# Reverse mapping
+ETF_BY_SECTOR = {v: k for k, v in SECTOR_ETFS.items()}
+
+
 def get_all_industry_groups() -> list[IndustryGroup]:
     """Return a flat list of all industry groups across all sectors."""
     groups = []
@@ -495,31 +537,36 @@ def get_ticker_industry_map() -> dict[str, list[str]]:
     return mapping
 
 
-def load_custom_taxonomy(path: str) -> dict[str, dict[str, list[str]]]:
+def reload_taxonomy_from_yaml(path: str | None = None) -> tuple[dict, dict]:
     """
-    Load a custom taxonomy from a JSON file and merge with the base taxonomy.
+    Reload taxonomy from a YAML file.
 
-    Expected format:
-    {
-        "XLK": {
-            "**My-Custom-Group": ["TICK1", "TICK2"]
-        }
-    }
+    Args:
+        path: Path to YAML file. Defaults to taxonomy.yaml in project root.
+
+    Returns:
+        (SECTOR_ETFS, TAXONOMY) tuple
     """
-    p = Path(path)
+    global SECTOR_ETFS, TAXONOMY, ETF_BY_SECTOR
+
+    p = Path(path) if path else _TAXONOMY_YAML
     if not p.exists():
-        logger.warning(f"Custom taxonomy file not found: {path}")
-        return TAXONOMY
+        logger.warning(f"Taxonomy YAML not found: {p}")
+        return SECTOR_ETFS, TAXONOMY
+
+    if not HAS_YAML:
+        logger.warning("PyYAML not installed, cannot reload taxonomy")
+        return SECTOR_ETFS, TAXONOMY
 
     with open(p) as f:
-        custom = json.load(f)
+        data = yaml.safe_load(f)
 
-    merged = {k: dict(v) for k, v in TAXONOMY.items()}
-    for etf, industries in custom.items():
-        if etf not in merged:
-            merged[etf] = {}
-        for name, tickers in industries.items():
-            merged[etf][name] = tickers
-            logger.info(f"  Added custom group: {etf}/{name} ({len(tickers)} tickers)")
+    SECTOR_ETFS = data.get("sector_etfs", SECTOR_ETFS)
+    TAXONOMY = data.get("taxonomy", TAXONOMY)
+    ETF_BY_SECTOR = {v: k for k, v in SECTOR_ETFS.items()}
 
-    return merged
+    logger.info(f"Reloaded taxonomy from {p}: "
+                f"{len(TAXONOMY)} sectors, "
+                f"{sum(len(v) for v in TAXONOMY.values())} industries")
+
+    return SECTOR_ETFS, TAXONOMY

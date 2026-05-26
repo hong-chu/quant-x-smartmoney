@@ -1,0 +1,43 @@
+name: Daily Data Prefetch
+
+on:
+  schedule:
+    # 11:00 PM UTC = 7:00 PM ET (after US market close)
+    - cron: "0 23 * * 1-5"  # Mon-Fri only
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  prefetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run prefetch script
+        run: |
+          python scripts/prefetch_data.py
+
+      - name: Check cache file
+        run: |
+          ls -lh data/cache.pkl
+          echo "Cache size: $(du -h data/cache.pkl | cut -f1)"
+
+      - name: Commit and push cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cache.pkl
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: daily data update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

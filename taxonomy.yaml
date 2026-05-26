@@ -1,0 +1,1120 @@
+sector_etfs:
+  XLK: Technology
+  XLF: Financial
+  XLE: Energy
+  XLV: Healthcare
+  XLY: Consumer Discretionary
+  XLP: Consumer Staples
+  XLI: Industrials
+  XLB: Materials
+  XLRE: Real Estate
+  XLU: Utilities
+  XLC: Communication Services
+  AI_COMPUTE: AI Compute & Cloud
+  AI_MEMORY: AI Memory & Storage
+  AI_NETWORK: AI Networking & Optical
+  AI_SEMI: AI Semi Infrastructure
+  AI_POWER: AI Power & Energy
+  AI_EDGE: AI Edge & Physical AI
+  AI_SOFTWARE: AI Software & Applications
+  AI_ADJACENT: AI Adjacent
+  PAI_ROBOTS: Robots by Application
+  PAI_AV: Autonomous Vehicles
+  PAI_AERIAL: Aerial / Drones
+  PAI_INDUSTRY: Autonomy by Industry
+  PAI_SENSING: Perception / Sensing
+  PAI_MOTION: Motion & Navigation
+  PAI_SIM: Simulation / Software
+  PAI_WEARABLE: Wearables / AR / XR
+taxonomy:
+  XLK:
+    Computer-Data Storage:
+    - MU
+    - SNDK
+    - STX
+    - WDC
+    - NTAP
+    - PSTG
+    - SMCI
+    Computer-Hardware/Periph:
+    - AAPL
+    - HPQ
+    - HPE
+    - DELL
+    - LOGI
+    - CRSR
+    Computer-Networking:
+    - CSCO
+    - ANET
+    - HPE
+    - NTGR
+    - CIEN
+    - NOK
+    Computer-Tech Services:
+    - ACN
+    - IBM
+    - CTSH
+    - EPAM
+    - GLOB
+    - DXC
+    - LDOS
+    Computer Sftwr-Enterprise:
+    - CRM
+    - NOW
+    - WDAY
+    - INTU
+    - TEAM
+    - HUBS
+    - DDOG
+    Computer Sftwr-Security:
+    - CRWD
+    - PANW
+    - FTNT
+    - ZS
+    - S
+    - QLYS
+    Computer Sftwr-Design:
+    - ADBE
+    - CDNS
+    - SNPS
+    - PTC
+    - ADSK
+    Computer Sftwr-Database:
+    - ORCL
+    - MDB
+    - SNOW
+    - ESTC
+    - CLSK
+    Computer Sftwr-Edu/Media:
+    - MSFT
+    - GOOG
+    - GOOGL
+    Comp Sftwr-Spec Enterprs:
+    - PLTR
+    - VEEV
+    - PAYC
+    - PCTY
+    - TYL
+    Computer-Integrated Syst/POS/ATM:
+    - VYX
+    - PAX
+    - TOST
+    - XYZ
+    Elec-Semiconductor Mfg:
+    - INTC
+    - TSM
+    - GFS
+    - UMC
+    - AMKR
+    Elec-Semiconductor Fabless:
+    - NVDA
+    - AMD
+    - QCOM
+    - AVGO
+    - MRVL
+    - ARM
+    - SIMO
+    - SYNA
+    - AMBA
+    - CGNX
+    Elec-Semiconductor Equip:
+    - AMAT
+    - LRCX
+    - KLAC
+    - ASML
+    - TER
+    - ONTO
+    Elec-Contract Mfg:
+    - FLEX
+    - JBL
+    - CLS
+    - SANM
+    Elec-Scientific/Measrng:
+    - KEYS
+    - TDY
+    - FTV
+    - GRMN
+    - COHR
+    Electronic-Parts:
+    - APH
+    - TEL
+    - GLW
+    - AMPH
+    Elec-Misc Products:
+    - ENPH
+    - SEDG
+    - ITRI
+    Internet-Network Sltns:
+    - NET
+    - AKAM
+    - FSLY
+    - CDW
+    Telecom-Fiber Optics:
+    - LITE
+    - COHR
+    - VIAV
+    - VISN
+    Telecom-Infrastructure:
+    - AMT
+    - CCI
+    - SBAC
+    - UNIT
+    Telecom-Cable/Satl Eqp:
+    - GRMN
+    - GILT
+    Telecom-Consumer Prods:
+    - SONO
+    - TBCH
+    Wholesale-Electronics:
+    - ARW
+    - AVT
+    - SCSC
+    Consumer Prod-Electronic:
+    - ROKU
+    - PTON
+    '**Computer-AI Infra':
+    - NVDA
+    - AMD
+    - SMCI
+    - VRT
+    - ANET
+    - DELL
+    - MSFT
+    - AMZN
+    - GOOG
+    - META
+    '**Computer-Quantum Computing':
+    - IONQ
+    - RGTI
+    - QBTS
+    - QUBT
+    - ARQQ
+    '**AeroSpace-New Space Tech':
+    - RKLB
+    - ASTS
+    - RDW
+    - LUNR
+    - BKSY
+    '**Energy-Solar':
+    - ENPH
+    - SEDG
+    - FSLR
+    - RUN
+    - ARRY
+  XLF:
+    Banks-Money Center:
+    - JPM
+    - BAC
+    - WFC
+    - C
+    - USB
+    Banks-Regional:
+    - PNC
+    - TFC
+    - FITB
+    - HBAN
+    - KEY
+    - CFG
+    - RF
+    Banks-Investment/Brokerage:
+    - GS
+    - MS
+    - SCHW
+    - RJF
+    Finance-Credit Card/Payment:
+    - V
+    - MA
+    - AXP
+    - COF
+    - PYPL
+    - XYZ
+    Finance-Insurance/Brokerage:
+    - BRK-B
+    - AIG
+    - MET
+    - PRU
+    - ALL
+    - TRV
+    Finance-Property/Casualty Ins:
+    - PGR
+    - CB
+    - CINF
+    - HIG
+    Finance-Life Insurance:
+    - AFL
+    - GL
+    - LNC
+    - VOYA
+    Finance-Asset Management:
+    - BLK
+    - BX
+    - KKR
+    - APO
+    - ARES
+    - OWL
+    Finance-REIT/Equity Trust:
+    - SPG
+    - PLD
+    - O
+    - VICI
+    - WPC
+    Finance-Exchange/Clearing:
+    - CME
+    - ICE
+    - NDAQ
+    - CBOE
+    Finance-Fintech/Digital:
+    - FIS
+    - FISV
+    - GPN
+    - AFRM
+    - UPST
+    Finance-Mortgage/Related:
+    - RKT
+    - UWMC
+    - PFSI
+  XLE:
+    Oil&Gas-Integrated:
+    - XOM
+    - CVX
+    - SHEL
+    - TTE
+    - BP
+    Oil&Gas-Exploration/Prod:
+    - COP
+    - EOG
+    - XOM
+    - DVN
+    - FANG
+    - OXY
+    Oil&Gas-Field Services:
+    - SLB
+    - HAL
+    - BKR
+    - FTI
+    - NOV
+    Oil&Gas-Refining:
+    - MPC
+    - PSX
+    - VLO
+    - DINO
+    Oil&Gas-Pipeline/MLP:
+    - WMB
+    - KMI
+    - OKE
+    - TRGP
+    - ET
+    - EPD
+    Oil&Gas-Drilling:
+    - RIG
+    - HP
+    - NBR
+    Energy-Alternative/Renewable:
+    - NEE
+    - PLUG
+    - BE
+    - FCEL
+  XLV:
+    Drug-Major Pharma:
+    - JNJ
+    - LLY
+    - MRK
+    - PFE
+    - ABBV
+    - BMY
+    - NVS
+    Drug-Biotech:
+    - AMGN
+    - GILD
+    - VRTX
+    - REGN
+    - MRNA
+    - BIIB
+    Drug-Generic/Specialty:
+    - TEVA
+    - VTRS
+    - ZTS
+    Medical-Systems/Equipment:
+    - ABT
+    - MDT
+    - SYK
+    - BSX
+    - EW
+    - ISRG
+    Medical-Diagnostics:
+    - TMO
+    - DHR
+    - A
+    - BIO
+    - ILMN
+    Medical-Products:
+    - BDX
+    - BAX
+    - ZBH
+    - HOLX
+    Medical-HMO/PPO:
+    - UNH
+    - ELV
+    - CI
+    - CNC
+    - HUM
+    Medical-Services:
+    - HCA
+    - UHS
+    - THC
+    - DVA
+    Medical-Dental/Optical:
+    - ALGN
+    - XRAY
+    - COO
+    '**Drug-GLP1/Obesity':
+    - LLY
+    - NVO
+    - AMGN
+    - VKTX
+  XLY:
+    Retail-Internet/E-Commerce:
+    - AMZN
+    - BABA
+    - MELI
+    - ETSY
+    - W
+    - CHWY
+    Retail-Restaurants:
+    - MCD
+    - SBUX
+    - CMG
+    - YUM
+    - DPZ
+    - QSR
+    Retail-Home Furnishing:
+    - HD
+    - LOW
+    - WSM
+    - RH
+    - BBBY
+    Retail-Apparel/Shoes:
+    - NKE
+    - TJX
+    - ROST
+    - GAP
+    - ANF
+    - AEO
+    Retail-Discount/Variety:
+    - WMT
+    - COST
+    - TGT
+    - DG
+    - DLTR
+    Auto/Truck-Original Equip:
+    - TSLA
+    - GM
+    - F
+    - RIVN
+    - LCID
+    Auto/Truck-Parts/Equip:
+    - APTV
+    - BWA
+    - ALV
+    - LEA
+    Leisure-Hotels/Motels:
+    - MAR
+    - HLT
+    - H
+    - WH
+    - ABNB
+    Leisure-Travel/Booking:
+    - BKNG
+    - EXPE
+    - TRIP
+    - TCOM
+    Leisure-Gaming/Equipment:
+    - DKNG
+    - FLUT
+    - MGM
+    - CZR
+    - WYNN
+    Building-Residential/Comml:
+    - DHI
+    - LEN
+    - NVR
+    - PHM
+    - TOL
+  XLP:
+    Food-Packaged/Proc:
+    - PG
+    - KO
+    - PEP
+    - MDLZ
+    - GIS
+    - KHC
+    - HSY
+    Food-Dairy Products:
+    - CAG
+    - SJM
+    - CPB
+    Household/Personal Care:
+    - CL
+    - KMB
+    - CHD
+    - CLX
+    - EL
+    Tobacco:
+    - PM
+    - MO
+    - BTI
+    Beverages-Alcohol:
+    - STZ
+    - BF-B
+    - DEO
+    - SAM
+    Beverages-Non-Alcohol:
+    - KDP
+    - MNST
+    - CELH
+    Retail-Supermarket/Mini-Mart:
+    - KR
+    - ACI
+    - SFM
+  XLI:
+    Aerospace/Defense:
+    - BA
+    - LMT
+    - RTX
+    - GD
+    - NOC
+    - LHX
+    - HII
+    Machinery-General Industrial:
+    - CAT
+    - DE
+    - EMR
+    - ROK
+    - DOV
+    Transportation-Rail:
+    - UNP
+    - CSX
+    - NSC
+    - CP
+    Transportation-Airline:
+    - DAL
+    - UAL
+    - LUV
+    - AAL
+    - JBLU
+    Transportation-Truck/Ship:
+    - FDX
+    - UPS
+    - XPO
+    - ODFL
+    - SAIA
+    Electrical-Power/Equipment:
+    - ETN
+    - EMR
+    - PH
+    - AME
+    - GEV
+    - NVT
+    - POWL
+    Pollution Control:
+    - WM
+    - RSG
+    - WCN
+    - CLH
+    Staffing/HR Services:
+    - ADP
+    - PAYX
+    - RHI
+    - MAN
+    Conglomerate/Diversified:
+    - GE
+    - HON
+    - MMM
+    - ITW
+    '**Defense-Drones/Unmanned':
+    - AVAV
+    - KTOS
+    - RKLB
+    '**Electrification-Grid Infra':
+    - GEV
+    - NVT
+    - POWL
+    - ETN
+    - VRT
+  XLB:
+    Chemical-Diversified:
+    - LIN
+    - APD
+    - DD
+    - DOW
+    - ECL
+    Chemical-Specialty:
+    - SHW
+    - PPG
+    - IFF
+    - CE
+    - EMN
+    Chemical-Agriculture:
+    - CTVA
+    - CF
+    - MOS
+    - FMC
+    - NTR
+    Mining-Gold/Silver:
+    - NEM
+    - GOLD
+    - GFI
+    - AEM
+    - KGC
+    Mining-Copper/Base Metals:
+    - FCX
+    - SCCO
+    - TECK
+    Steel/Iron:
+    - NUE
+    - STLD
+    - CLF
+    Building-Cement/Aggregate:
+    - VMC
+    - MLM
+    - EXP
+    Paper/Forest Products:
+    - IP
+    - PKG
+    - SW
+    Mining-Lithium/Battery Metals:
+    - ALB
+    - SQM
+  XLRE:
+    REIT-Data Center:
+    - EQIX
+    - DLR
+    - AMT
+    REIT-Retail:
+    - SPG
+    - O
+    - REG
+    - KIM
+    - FRT
+    REIT-Industrial/Logistics:
+    - PLD
+    - REXR
+    - FR
+    REIT-Residential:
+    - AVB
+    - EQR
+    - MAA
+    - UDR
+    - ESS
+    REIT-Healthcare:
+    - WELL
+    - VTR
+    - DOC
+    - OHI
+    REIT-Office:
+    - BXP
+    - VNO
+    - SLG
+    REIT-Specialty:
+    - VICI
+    - CCI
+    - PSA
+    - EXR
+    - CUBE
+  XLU:
+    Utilities-Electric:
+    - NEE
+    - DUK
+    - SO
+    - D
+    - AEP
+    - EXC
+    - SRE
+    Utilities-Gas Distribution:
+    - NI
+    - ATO
+    - SWX
+    Utilities-Water:
+    - AWK
+    - WTRG
+    - HTO
+    Utilities-Diversified:
+    - ES
+    - ED
+    - WEC
+    - DTE
+    - CMS
+    - XEL
+    - PPL
+    '**Utilities-Nuclear/SMR':
+    - CEG
+    - VST
+    - TLN
+    - SMR
+    - OKLO
+  XLC:
+    Internet-Content:
+    - META
+    - GOOGL
+    - SNAP
+    - PINS
+    - RDDT
+    Media-Streaming/Entertainment:
+    - NFLX
+    - DIS
+    - WBD
+    - PSKY
+    Media-Periodicals/Publishing:
+    - NWSA
+    - NYT
+    Telecom-Wireless Services:
+    - T
+    - VZ
+    - TMUS
+    Telecom-Cable/CATV:
+    - CMCSA
+    - CHTR
+    Computer-Gaming:
+    - EA
+    - TTWO
+    - RBLX
+    Internet-Social/Messaging:
+    - SPOT
+    - MTCH
+    - BMBL
+    Advertising-Digital:
+    - TTD
+    - MGNI
+    - DV
+    - OMC
+  AI_COMPUTE:
+    CPU / IP Licensing:
+    - ARM
+    - INTC
+    - AMD
+    - QCOM
+    AI GPU Cloud Providers:
+    - CRWV
+    - NBIS
+    - APLD
+    - IREN
+    AI Cloud Infrastructure (Hyperscaler):
+    - AMZN
+    - GOOG
+    - MSFT
+    - ORCL
+    - META
+    AI Inference / Deployment Platform:
+    - PLTR
+    - CRM
+    - NOW
+    - AI
+    - BBAI
+    Crypto Mining → AI Compute Pivot:
+    - IREN
+    - CLSK
+    - HUT
+    - CIFR
+    - BTDR
+    - WULF
+    - APLD
+    AI Chips / Accelerators:
+    - AVGO
+    - MRVL
+    - CRDO
+    - ALAB
+    - SMCI
+    - NVDA
+    - AMD
+  AI_MEMORY:
+    Enterprise Storage Systems:
+    - P
+    - NTAP
+    - PENG
+    - DELL
+    - HPE
+    - IBM
+    Memory Interface / Controllers:
+    - RMBS
+    - SIMO
+    - ALAB
+    - MCHP
+    Memory / HBM / Storage:
+    - SNDK
+    - WDC
+    - STX
+    - MU
+  AI_NETWORK:
+    Networking Switches / Routers:
+    - ANET
+    - CSCO
+    - HPE
+    - NOK
+    Optical Components (Traditional Pluggable):
+    - COHR
+    - LITE
+    - AAOI
+    - MXL
+    - VIAV
+    Fiber / Connectors / DCI:
+    - GLW
+    - CIEN
+    - FN
+    - VISN
+    - NOK
+    - CALX
+    Next-Gen Interconnect (LPO/CPO/AEC):
+    - MTSI
+    - SMTC
+    - LASR
+    - GFS
+    - POET
+    - AXTI
+    - CRDO
+    - ALAB
+  AI_SEMI:
+    Inspection / Metrology:
+    - KLAC
+    - CAMT
+    - ONTO
+    - FORM
+    Semi Materials / Consumables:
+    - ENTG
+    - MKSI
+    - PLAB
+    - APD
+    - LIN
+    Semi Test:
+    - TER
+    - COHU
+    - FORM
+    - ATEYY
+    - AEHR
+    Advanced Packaging:
+    - AMKR
+    - ASX
+    - INTC
+    - TSM
+    Foundry / Manufacturing:
+    - TSM
+    - INTC
+    - GFS
+    - UMC
+    Semi Equipment & EDA:
+    - AMAT
+    - LRCX
+    - ASML
+    - ONTO
+    - ACLS
+    - UCTT
+    - CDNS
+    - SNPS
+  AI_POWER:
+    Power Generation (Nuclear):
+    - CEG
+    - VST
+    - TLN
+    - OKLO
+    - SMR
+    - BWXT
+    - SO
+    - PEG
+    - EXC
+    Power Generation (Gas / Renewable):
+    - SEI
+    - BE
+    - GEV
+    - FSLR
+    - NEE
+    - AES
+    - NRG
+    - CWEN
+    Power Equipment:
+    - GEV
+    - ETN
+    - POWL
+    - VRT
+    - NVT
+    - HUBB
+    - EMR
+    - ABBNY
+    - CMI
+    - CAT
+    - SPXC
+    Power Semiconductors:
+    - MPWR
+    - 'ON'
+    - WOLF
+    - ALGM
+    - DIOD
+    - VSH
+    - AOS
+    Power Backup / Energy Storage:
+    - GNRC
+    - FLNC
+    - ENPH
+    - SEDG
+    - STEM
+    Cooling / Thermal:
+    - VRT
+    - NVT
+    - MOD
+    - AAON
+    - TT
+    - CARR
+    - JCI
+    - LII
+    - WSO
+    Grid Utilities (DC Corridor):
+    - D
+    - AEP
+    - EVRG
+    - WEC
+    - DUK
+    - SRE
+    - PCG
+    - NEE
+    Nuclear Fuel:
+    - CCJ
+    - LEU
+    - UEC
+    - DNN
+    - NXE
+    - UUUU
+    Data Center Construction / Grid Build:
+    - PWR
+    - STRL
+    - MTZ
+    - EME
+    - DY
+    - PRIM
+    - WCC
+    - J
+    - FLR
+    - ACM
+    Data Center REITs / Operators:
+    - EQIX
+    - DLR
+    - AMT
+    - APLD
+    - IREN
+  AI_EDGE:
+    Image Sensors:
+    - 'ON'
+    - SONY
+    - HIMX
+    - TDY
+    LiDAR / 3D Perception:
+    - HSAI
+    - INVZ
+    - OUST
+    - AEVA
+    Edge Audio / IoT Connectivity:
+    - CRUS
+    - SLAB
+    - CEVA
+    - QCOM
+    - SWKS
+    - QRVO
+    - SITM
+    Edge AI Processors:
+    - AMBA
+    - SYNA
+    - MBLY
+    - LSCC
+    Robotics & Humanoid:
+    - ISRG
+    - TER
+    - SYM
+    - PATH
+    - MBLY
+    - TSLA
+  AI_SOFTWARE:
+    Agent Infrastructure:
+    - RDDT
+    - GTLB
+    - VRSN
+    - FSLY
+    - AKAM
+    - NET
+    - DDOG
+    - SNOW
+    - MDB
+    - ESTC
+    Cybersecurity (AI-Era):
+    - CRWD
+    - PANW
+    - ZS
+    - S
+    - FTNT
+    - OKTA
+    - TENB
+    AI Data / Behavioral:
+    - RDDT
+    - DUOL
+    - SNAP
+    - PINS
+    - TTD
+    - YELP
+  AI_ADJACENT:
+    Critical Minerals / Materials:
+    - MP
+    - UAMY
+    - USAR
+    - ALB
+    - LAC
+    - UUUU
+    - WOLF
+    Space / LEO Connectivity:
+    - RKLB
+    - ASTS
+    - IRDM
+    - VSAT
+    Quantum Computing:
+    - IONQ
+    - RGTI
+    - QUBT
+    - QBTS
+  PAI_ROBOTS:
+    Humanoid Robotics:
+    - TSLA
+    - MBLY
+    - NVDA
+    - AMBA
+    - MP
+    - ALGM
+    Industrial Robotics / Cobots:
+    - TER
+    - ROK
+    - ABBNY
+    - EMR
+    - HON
+    Surgical / Medical Robotics:
+    - ISRG
+    - SYK
+    - MDT
+    - GMED
+    - ZBH
+    - BSX
+    - MASI
+    Warehouse / Logistics Robotics:
+    - SYM
+    - AMZN
+    - GXO
+    - PATH
+    - ZBRA
+    Delivery Robots:
+    - SERV
+    - NBIS
+    - AMZN
+  PAI_AV:
+    Autonomous Vehicles / Self-Driving Cars:
+    - TSLA
+    - MBLY
+    - GOOGL
+    - GM
+    - APTV
+    - AMZN
+    - RIVN
+    Autonomous Trucks / Commercial:
+    - AUR
+    - PCAR
+    - CMI
+    - TSLA
+  PAI_AERIAL:
+    Drones / UAV (Defense):
+    - AVAV
+    - KTOS
+    - LHX
+    - NOC
+    - LMT
+    - RTX
+    - RCAT
+    Drones / UAV (Commercial + eVTOL):
+    - JOBY
+    - ACHR
+    - AMBA
+  PAI_INDUSTRY:
+    Autonomous Agriculture:
+    - DE
+    - AGCO
+    - CNH
+    - TRMB
+    - PL
+    Autonomous Construction / Mining:
+    - CAT
+    - DE
+    - TRMB
+    - TEX
+    Autonomous Defense / Unmanned Systems:
+    - NOC
+    - GD
+    - HII
+    - LMT
+    - RTX
+    - LHX
+    - BWXT
+  PAI_SENSING:
+    LiDAR / 3D Perception:
+    - OUST
+    - HSAI
+    - INVZ
+    - AEVA
+    - HIMX
+    Machine Vision (Industrial):
+    - CGNX
+    - TDY
+    - ZBRA
+    - KEYS
+    - AME
+    - AZTA
+    Radar / Ultrasonic / Multi-Sensor Fusion:
+    - APTV
+    - MBLY
+    - 'ON'
+    - NXPI
+    - MCHP
+  PAI_MOTION:
+    Motion / Actuation / Motor Control:
+    - NOVT
+    - RRX
+    - ROK
+    - NJDCY
+    - ALGM
+    - TER
+    Exoskeletons / Assistive Robotics:
+    - LFWD
+    - EKSO
+    - SYK
+    Navigation / Positioning / SLAM:
+    - TRMB
+    - GRMN
+    - QCOM
+    - IRDM
+    - SWKS
+  PAI_SIM:
+    Simulation / Digital Twin:
+    - NVDA
+    - SNPS
+    - PTC
+    - U
+    - CDNS
+    - MSFT
+    Robot Software / AI Frameworks:
+    - NVDA
+    - GOOGL
+    - MSFT
+    - AMZN
+    - INTC
+  PAI_WEARABLE:
+    Wearables / AR / VR / XR:
+    - AAPL
+    - GOOGL
+    - META
+    - SNAP
+    - GRMN
+    - VUZI
+    - KOPN
+    - HIMX
+    - SYNA
+    - CRUS
