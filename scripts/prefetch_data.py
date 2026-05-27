@@ -117,7 +117,7 @@ def main():
     # Save
     CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(CACHE_FILE, "wb") as f:
-        pickle.dump(result, f, protocol=pickle.HIGHEST_PROTOCOL)
+        pickle.dump(result, f, protocol=4)
 
     size_mb = CACHE_FILE.stat().st_size / 1024 / 1024
     logger.info(f"Saved cache to {CACHE_FILE} ({size_mb:.1f} MB)")
